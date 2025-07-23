@@ -11,67 +11,75 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Custom styles for the SOS icon */
         .sos-icon {
-            display: inline-flex; /* Use flexbox for easy centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            width: 32px; /* Adjusted size for better fit */
-            height: 32px; /* Adjusted size for better fit */
-            border: 2px solid #ef4444; /* Red border for emergency */
-            border-radius: 6px; /* Slightly rounded corners */
-            font-family: sans-serif;
-            font-size: 14px; /* Adjusted font size */
-            font-weight: bold;
-            color: #ef4444; /* Red text for emergency */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px; /* Slightly larger for better visibility */
+            height: 40px; /* Slightly larger for better visibility */
+            border: 2px solid #ef4444; /* Emergency red border */
+            border-radius: 8px; /* Slightly more rounded */
+            font-family: 'Inter', sans-serif; /* Use Inter for consistency */
+            font-size: 16px; /* Adjusted font size */
+            font-weight: 700; /* Bold */
+            color: #ef4444; /* Emergency red text */
             background-color: transparent;
-            /* Added margin-right to space it from the numbers */
-            margin-right: 12px; 
-            flex-shrink: 0; /* Prevent it from shrinking */
+            margin-right: 16px; /* Increased margin for spacing */
+            flex-shrink: 0;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+        .sos-icon:hover {
+            background-color: #ef4444;
+            color: #ffffff;
+            transform: translateY(-2px); /* Subtle lift on hover */
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-br from-indigo-50 to-purple-100 flex items-center justify-center min-h-screen p-4">
 
-    <div class="w-full max-w-sm bg-white rounded-2xl shadow-lg p-8 m-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-xl p-8 m-4 transform hover:scale-105 transition-transform duration-300">
         <div class="flex flex-col items-center">
-            <div class="relative">
-                <img class="w-32 h-32 rounded-full object-cover border-4 border-blue-500" 
-                     src="https://placehold.co/128x128/EBF4FF/76A9FA?text=HVB" 
+            <div class="relative mb-4">
+                <img class="w-36 h-36 rounded-full object-cover border-4 border-indigo-500 shadow-md" 
+                     src="https://placehold.co/144x144/EDEEF7/5C6BC0?text=HVB" 
                      alt="H V Balakrishna">
-                <div class="absolute bottom-0 right-0 bg-white rounded-full p-1">
-                     <img class="w-6 h-6" src="https://flagcdn.com/w40/in.png" alt="India Flag">
+                <div class="absolute bottom-0 right-0 bg-white rounded-full p-1 border border-gray-200 shadow-sm">
+                    <img class="w-7 h-7" src="https://flagcdn.com/w40/in.png" alt="India Flag">
                 </div>
             </div>
 
-            <h1 class="text-2xl font-bold text-gray-800 mt-4">H V Balakrishna</h1>
-            <p class="text-gray-500">Bengaluru, India</p>
+            <h1 class="text-3xl font-extrabold text-gray-800 tracking-tight mt-2">H V Balakrishna</h1>
+            <p class="text-gray-500 text-md mt-1">Bengaluru, India</p>
 
-            <div class="w-full mt-8 space-y-4 text-left">
+            <div class="w-full mt-10 space-y-5 text-left">
                 <div class="flex items-center text-gray-700">
                     <div class="w-10 flex-shrink-0 flex justify-center">
-                        <i class="fas fa-phone fa-fw text-blue-500"></i>
+                        <i class="fas fa-phone fa-lg text-indigo-500"></i>
                     </div>
-                    <a href="tel:+919845000740" class="ml-3 hover:text-blue-600 transition-colors duration-300">+91 98450 00740</a>
+                    <a href="tel:+919845000740" class="ml-4 text-lg hover:text-indigo-600 transition-colors duration-300 font-medium">+91 98450 00740</a>
                 </div>
 
                 <div class="flex items-center text-gray-700">
                     <div class="w-10 flex-shrink-0 flex justify-center">
-                        <i class="fas fa-envelope fa-fw text-blue-500"></i>
+                        <i class="fas fa-envelope fa-lg text-indigo-500"></i>
                     </div>
-                    <a href="mailto:hvbalakrishna@gmail.com" class="ml-3 hover:text-blue-600 transition-colors duration-300">hvbalakrishna@gmail.com</a>
+                    <a href="mailto:hvbalakrishna@gmail.com" class="ml-4 text-lg hover:text-indigo-600 transition-colors duration-300 font-medium">hvbalakrishna@gmail.com</a>
                 </div>
 
                 <div class="flex items-start text-gray-700">
                     <div class="w-10 flex-shrink-0 flex justify-center pt-1">
-                        <i class="fas fa-map-marker-alt fa-fw text-blue-500"></i>
+                        <i class="fas fa-map-marker-alt fa-lg text-indigo-500"></i>
                     </div>
-                    <p class="ml-3">#1627, 16th Main, 35th Cross, <br>Banashankari 2nd Stage, <br>Bengaluru - 560070</p>
+                    <p class="ml-4 text-lg leading-relaxed font-medium">#1627, 16th Main, 35th Cross, Banashankari 2nd Stage, Bengaluru - 560070</p>
                 </div>
 
-                <div class="flex items-center text-gray-700">
+                <div class="flex items-center text-gray-700 pt-3">
                     <div class="sos-icon">SOS</div> 
-                    <p class="flex-grow">+91 96068 88661, </p> 
-                    <p class="flex-grow">+91 97411 06513</p>
+                    <div class="flex flex-col">
+                        <a href="tel:+919606888661" class="text-lg font-medium hover:text-red-600 transition-colors duration-300">+91 96068 88661</a>
+                        <a href="tel:+919741106513" class="text-lg font-medium hover:text-red-600 transition-colors duration-300 mt-1">+91 97411 06513</a>
+                    </div>
                 </div>
             </div>
         </div>
